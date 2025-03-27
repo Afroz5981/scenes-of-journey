@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenes of Journey - Itinerary Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        @media print {
+            .no-print, .itinerary-planner {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scenes of Journey</h1>
+        <h2 class="itinerary-planner">Itinerary Planner</h2>
+        <p class="itinerary-planner">Plan your trip and save it to your calendar.</p>
+        
+        <div class="itinerary-planner">
+            <label>Destination:</label>
+            <input type="text" id="destination" placeholder="Enter destination">
+            <label>Start Date:</label>
+            <input type="date" id="start-date">
+            <label>End Date:</label>
+            <input type="date" id="end-date">
+            <label>Number of Days:</label>
+            <input type="number" id="num-days" min="1" value="1" onchange="generateActivityFields()">
+            <div id="activities"></div>
+            <button onclick="generateItinerary()">Generate Itinerary</button>
+        </div>
+        
+        <div id="itinerary" class="hidden">
+            <h2>Your Planned Itinerary</h2>
+            <div id="itinerary-content"></div>
+            <button id="save-pdf" class="hidden no-print" onclick="saveAsPDF()">Save as PDF</button>
+            <button id="save-calendar" class="hidden no-print" onclick="saveToCalendar()">Save to Calendar</button>
+        </div>
+    </div>
+
+    <script>
+        function generateActivityFields() {
+            const numDays = document.getElementById('num-days').value;
+            const activitiesDiv = document.getElementById('activities');
+            activitiesDiv.innerHTML = '';
+            for (let i = 1; i <= numDays; i++) {
+                activitiesDiv.innerHTML += `<label>Activities for Day ${i} (comma separated):</label>
+                                           <input type="text" id="activities-day-${i}" placeholder="Enter activities">`;
+            }
+        }
+
+        function generateItinerary() {
+            const destination = document.getElementById('destination').value;
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const numDays = document.getElementById('num-days').value;
+            let itineraryContent = `<p>Trip to ${destination}<br>${startDate} to ${endDate}</p><ul>`;
+            
+            for (let i = 1; i <= numDays; i++) {
+                const activities = document.getElementById(`activities-day-${i}`).value;
+                itineraryContent += `<li><strong>Day ${i}:</strong> ${activities}</li>`;
+            }
+            itineraryContent += '</ul>';
+            
+            document.getElementById('itinerary-content').innerHTML = itineraryContent;
+            document.getElementById('itinerary').classList.remove('hidden');
+            document.getElementById('save-pdf').classList.remove('hidden');
+            document.getElementById('save-calendar').classList.remove('hidden');
+        }
+        
+        function saveAsPDF() {
+            window.print();
+        }
+        
+        function saveToCalendar() {
+            alert("Calendar save functionality will be implemented here.");
+        }
+    </script>
+</body>
+</html>
