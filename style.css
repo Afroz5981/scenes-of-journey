@@ -228,3 +228,13 @@ footer {
     text-align: center;
     pointer-events: none;
 }
+.planner-btn {
+    display: inline-block;
+    margin-top: 20px; /* Adds space above the button */
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
