@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scenes of Journey</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Explore breathtaking destinations, travel itineraries, and adventure experiences with Scenes of Journey.">
+    <meta name="keywords" content="travel, itineraries, destinations, adventure, vlogging">
+    <meta property="og:title" content="Scenes of Journey - Discover, Explore, and Inspire">
+    <meta property="og:description" content="Join us as we explore breathtaking landscapes, vibrant cultures, and hidden gems around the world.">
+    <title>Scenes of Journey - Discover, Explore, and Inspire</title>
+    <link rel="stylesheet" href="style.css" rel="preload" as="style">
 </head>
 <body>
     
     <header>
         <h1>Scenes of Journey</h1>
         <p>Discover, Explore, and Inspire</p>
-        <nav>
+        <nav aria-label="Main Navigation">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#destinations">Destinations</a></li>
@@ -25,7 +29,7 @@
     <section id="home">
         <h2>Welcome to Scenes of Journey</h2>
         <p>Embark on an adventure with us as we explore breathtaking landscapes, vibrant cultures, and hidden gems around the world. From bustling cities to serene escapes, our journey is all about discovering the beauty of travel.</p>
-        <p>🌍 Join us as we:
+        <p>🌍 Join us as we:</p>
         <ul>
             <li>Wander through historic streets</li>
             <li>Capture stunning sunrises & sunsets</li>
@@ -33,9 +37,8 @@
             <li>Share travel tips & itineraries to help you plan your next trip</li>
         </ul>
         🚀 Let’s explore the world together!
-        </p>
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Qmn_gFKhhMQ" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Qmn_gFKhhMQ" frameborder="0" allowfullscreen loading="lazy"></iframe>
         </div>
     </section>
     
@@ -63,8 +66,8 @@
         <p>Experience the essence of travel through our curated collection of videos and snapshots. From stunning landscapes to unforgettable moments, our gallery is a window into the adventures that await you.</p>
         <p>🌟 Watch our latest travel Shorts and get inspired!</p>
         <div class="gallery-grid">
-            <div class="gallery-item"><iframe width="200" height="350" src="https://www.youtube.com/embed/OS7rnwoBnXs" frameborder="0" allowfullscreen></iframe></div>
-            <div class="gallery-item"><iframe width="200" height="350" src="https://www.youtube.com/embed/jWjfz2f0VvM" frameborder="0" allowfullscreen></iframe></div>
+            <div class="gallery-item"><iframe width="200" height="350" src="https://www.youtube.com/embed/OS7rnwoBnXs" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+            <div class="gallery-item"><iframe width="200" height="350" src="https://www.youtube.com/embed/jWjfz2f0VvM" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
         </div>
     </section>
     
@@ -78,13 +81,14 @@
             <li>🔹 Save it as a PDF or add it to your calendar</li>
         </ul>
         <p>🚀 <strong>Start planning your dream trip now!</strong></p>
+        <a href="itinerary-planner.html" class="planner-btn">Start Planning</a>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
         <p><strong>Let’s Stay Connected!</strong></p>
         <p>📩 <strong>For Sponsorships & Collaborations:</strong> inquiry@scenesofjourney.in</p>
-        <p>📸 Follow us on Instagram for more travel updates: <a href="https://www.instagram.com/scenesofjourney" target="_blank">@scenesofjourney</a></p>
+        <p>📸 Follow us on Instagram for more travel updates: <a href="https://www.instagram.com/scenesofjourney" target="_blank" rel="noopener noreferrer">@scenesofjourney</a></p>
     </section>
     
     <footer>
@@ -92,4 +96,3 @@
     </footer>
 </body>
 </html>
-
